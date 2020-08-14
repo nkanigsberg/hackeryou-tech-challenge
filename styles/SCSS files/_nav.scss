@@ -1,0 +1,70 @@
+// variables
+	// navbar height
+	$navHeight: 6vh;
+	$navMinHeight: calc(5rem + 1.5vw);
+
+// Navbar
+header nav {
+	background: $secondaryBackground;
+	text-transform: uppercase;
+	height: $navHeight;
+	min-height: $navMinHeight;
+	display: flex;
+	letter-spacing: 1px;
+
+	.wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	ul {
+		display: flex;
+
+		a {
+			padding: 0.8vw;
+		}
+	}
+}
+
+// Logo
+.logo {
+	@include fontSelect($primaryFont, 700);
+	font-size: calc(2rem + 1.5vw);
+}
+
+
+// Hamburger Nav (mobile only) 
+// Hide checkbox
+#hamburger {
+	opacity: 0;
+
+	// highlight label if focused on checkbox
+	&:focus + label {
+		color: $primaryAccent;
+	}
+}
+
+// style label (used for toggle)
+label[for="hamburger"] {
+	padding: 0.3vw;
+	background: rgba($secondaryBackground, 0.6);
+	border-radius: 50%;
+	cursor: pointer;
+	transition: color 0.15s;
+
+	&:hover,
+	&:focus {
+		color: $primaryAccent;
+	}
+}
+
+// Hide hamburger nav by default (unhide in mobile)
+#hamburger,
+label[for="hamburger"] {
+	position: fixed;
+	top: 0.5rem;
+	right: 0.5rem;
+	z-index: 30;
+	display: none;
+}

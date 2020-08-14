@@ -1,0 +1,217 @@
+// global styles
+
+// Strip default margin/padding
+h1,
+h2,
+h3,
+h4,
+p, 
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+// Strip ul default styling
+ul {
+    list-style: none;
+}
+
+// Strip anchor tag default styling
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+// Keep images inside container
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+// Set font size
+html {
+	font-size: 62.5%;
+}
+
+// body styles
+body {
+	@include fontSelect($primaryFont, 400);
+	@include fontSize(16);
+}
+
+// wrapper styles
+.wrapper {
+	max-width: $wrapperMaxWidth;
+	width: $wrapperWidth;
+	margin: 0 auto;
+}
+
+// section styles
+section,
+.footer-main {
+	padding: calc(4rem + 2vw) 0 calc(6rem + 3vw);
+}
+
+// nav styles
+nav {
+	a {
+		@include fontSelect($primaryFont, 700);
+		font-size: calc(0.9rem + 0.7vw);
+		transition: color 0.15s;
+
+		&:active {
+			font-weight: 900;
+		}
+		&:hover,
+		&:focus {
+			color: $primaryAccent;
+		}
+	}
+}
+
+
+// paragraph styles
+p {
+	font-size: calc(1.2rem + 0.3vw);
+	line-height: 1.6;
+	margin-bottom: 1rem;
+}
+
+// h3 styles
+h3 {
+	@include fontSelect($primaryFont, 700);
+	font-size: calc(2.2rem + 1vw);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: 1.5rem;
+}
+
+// h4 styles
+h4 {
+	@include fontSelect($primaryFont, 700);
+	font-size: calc(1.2rem + 0.5vw);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding-bottom: 0.5rem;
+}
+
+// time & date styles
+time {
+	@include fontSelect($secondaryFont, 400);
+	font-size: calc(1.2rem + 0.5vw);
+	display: inline-block;
+	margin-bottom: 1.2rem;
+}
+
+
+// Gallery styles
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	// Gallery items
+	&-item {
+		margin: $galleryMargin;
+
+		// Gallery text
+		&-text {
+			padding: calc(1.4rem + 1vw) calc(1.4rem + 0.8vw);
+		}
+
+		// "Read More" buttons
+		a {
+			@include fontSelect($primaryFont, 700);
+			font-size: calc(1.2rem + 0.3vw);
+			color: $primaryAccent;
+			text-transform: uppercase;
+			transition: 0.15s;
+
+			&:hover,
+			&:focus {
+				color: $lightestAccent;
+			}
+			&:active {
+				font-weight: 900;
+			}
+		}
+	}
+}
+
+// Image styles
+img {
+	height: calc(16rem + 10vw);
+	width: 100%;
+	object-fit: cover;
+}
+
+// Image Mouseover behaviour
+
+// Container for image and mouseover
+.image-container {
+	position: relative;
+	height: calc(16rem + 10vw);
+}
+
+// mouseover styles
+.mouseover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 10;
+	background: $transparentAccent;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+
+	&:hover,
+	&:focus {
+		opacity:1;
+	}
+
+	h4 {
+		color: $primaryBackground;
+	}
+}
+
+// Email subscribe forms
+.subscribe {
+	display: flex;
+
+	// Email input styles
+	input[type="email"] {
+		@include fontSelect($secondaryFont, 400);
+		font-size: calc(1.6rem + 0.6vw);
+		border: none;
+		background: $secondaryBackground;
+		padding: 1rem;
+		text-transform: lowercase;
+		text-align: center;
+		margin-bottom: 0.5rem;
+	}
+
+	// Submit input styles
+	input[type="submit"] {
+		@include fontSelect($primaryFont, 400);
+		font-size: calc(1.4rem + 0.5vw);
+		border: none;
+		background: $primaryAccent;
+		color: $primaryBackground;
+		padding: 1.6rem;
+		text-transform: uppercase;
+		cursor: pointer;
+		transition: background-color 0.15s;
+
+		&:hover,
+		&:focus {
+			background-color: $lighterAccent;
+		}
+		&:active {
+			font-weight: 700;
+		}
+	}
+}

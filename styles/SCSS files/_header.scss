@@ -1,0 +1,56 @@
+// header styles
+
+header {
+	height: 100vh;
+	min-height: 100rem;
+
+	p {
+		@include fontSelect($primaryFont, 400);
+		font-size: calc(1.5rem + 0.8vw);
+		line-height: 1.5;
+	}
+}
+
+// main heading
+h1 {
+	@include fontSelect($primaryFont, 700);
+	font-size: calc(3rem + 2vw);
+	text-transform: uppercase;
+}
+
+// subheading
+h2 {
+	@include fontSelect($secondaryFont, 400);
+	font-size: calc(1.8rem + 0.8vw);
+	text-transform: lowercase;
+	margin: 0.5rem 0 1.5rem;
+}
+
+// hero image & text
+.hero {
+	background: url(../Assets/image-main.jpg);
+	background-position: bottom;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	height: calc(100% - #{$navHeight});
+	padding: calc(5rem + 2vw);
+	
+	&-text {
+		text-align: center;
+		max-width: calc(75% + 10vw);
+		background: rgba($primaryBackground, 0.7);
+		padding: calc(4rem + 3.5vw);
+		
+		p {
+			text-align: center;
+		}
+	}
+
+	.wrapper {
+		height: 100%;
+		@include centerFlex();
+	}
+}
+
+

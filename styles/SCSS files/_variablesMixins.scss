@@ -1,0 +1,56 @@
+// variables
+
+	// Wrapper width
+	$wrapperMaxWidth: 1400px;
+	$wrapperWidth: 85%;
+	
+	//Gallery margin
+	$galleryMargin: 2rem;
+
+	//Gallery widths
+	$galleryFull: 100%;
+	$galleryHalf: 50%;
+
+	// background colours
+	$primaryBackground: #FFFFFF;
+	$secondaryBackground: #F6F7F9;
+	$footerBackground: #444444;
+
+	// font colours + pseudo states
+	$primaryBlack: #000000;
+	$secondaryBlack: #231F1F;
+	$primaryAccent: #E40015;
+	$transparentAccent: rgba(#E40015, 0.7);
+	$lighterAccent: lighten($primaryAccent, 10);
+	$lightestAccent: lighten($primaryAccent, 20);
+
+	// button colours
+	$buttonLight: darken($secondaryBackground, 15);
+	$buttonSelect: darken($secondaryBackground, 25);
+	$buttonSelectHover: darken($secondaryBackground, 35);
+	
+	// font stacks
+	$primaryFont: 'Raleway', sans-serif;
+	$secondaryFont: 'Noto Serif', serif;
+
+
+
+// mixins
+
+	// font sizes turn into rem values
+	@mixin fontSize($sizeValue){
+		font-size: ($sizeValue/10) * 1rem;
+	}
+
+	// Font family and weight
+	@mixin fontSelect($family, $weight){
+		font-family: $family;
+		font-weight: $weight;
+	}
+
+	// Flexbox centered
+	@mixin centerFlex() {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+}

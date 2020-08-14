@@ -1,0 +1,29 @@
+// featured section styles
+
+.featured {
+	background: $secondaryBackground;
+	text-align: center;
+
+	// featured gallery
+	.gallery {
+		&-item {
+			background-color: $primaryBackground;
+			flex-basis: calc(33% - 4rem);
+
+			// Positioning images
+			&-1 img{
+				object-position: 50% 70%;
+			}
+
+			&-2 img {
+				object-position: right;
+			}
+
+			&-3 img {
+				object-position: left;
+			}
+		}
+	}
+}
+
+

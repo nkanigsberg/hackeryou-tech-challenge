@@ -1,0 +1,57 @@
+// blog sidebar styles
+
+.sidebar {
+	flex-basis: 35%;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+
+	&-column {
+		display: flex;
+		flex-direction: column;
+	}
+
+	// reposition about image
+	.about-us img {
+		object-position: 50% 20%;
+	}
+
+	// Subscribe form
+	.subscribe {
+		background: $primaryBackground;
+		flex-wrap: wrap;
+
+		// set full width on inputs
+		input[type="email"],
+		input[type="submit"] {
+			width: 100%;
+		}
+	}
+}
+	
+// Recent Posts
+.recent-posts {
+	background: $secondaryBackground;
+	margin: $galleryMargin;
+
+	// style links
+	a {
+		font-size: calc(1.2rem + 0.3vw);
+		transition: color 0.15s;
+
+		&:hover,
+		&:focus {
+			color: $primaryAccent;
+		}
+		&:active {
+			font-weight: 700;
+		}
+	}
+
+	// recent posts list items
+	li {
+		text-align: left;
+		list-style-type: disc;
+		margin: calc(1rem + 0.8vw);
+	}
+}

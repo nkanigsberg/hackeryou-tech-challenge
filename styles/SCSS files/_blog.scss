@@ -1,0 +1,78 @@
+// blog section styles
+
+.blog {
+	text-align: center;
+
+	&-container {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	// blog gallery
+	.gallery {
+		flex-basis: 65%;
+
+		&-item {
+			background-color: $secondaryBackground;
+
+			// assigning width to images
+			&-1 {
+				width: 100%;
+				// setting unique padding for larger gallery item
+				p {
+					padding: 0 calc(1rem + 1vw);
+				}
+			}
+			&-2,
+			&-3 {
+				width: calc(50% - 4rem);
+			}
+		}
+
+		// gallery number buttons
+		&-buttons {
+			@include fontSelect($primaryFont, 700);
+			@include fontSize(22);
+
+
+			ul {
+				display: flex;
+				margin: calc(1rem + 1vw) 0;
+			}
+			
+			// button styles
+			button {
+				cursor: pointer;
+				border: none;
+				display: inline-block;
+				height: 5rem;
+				width: 5rem;
+				padding: 1rem;
+				background: $secondaryBackground;
+				border-radius: 50%;
+				margin: 5px;
+				transition: background 0.15s;
+
+				&:hover,
+				&:focus {
+					background: $buttonLight;
+				}
+				&:active {
+					font-weight: 900;
+				}
+			}
+
+			// selected button
+			li:first-child button {
+				background: $buttonSelect;
+				&:hover,
+				&:focus {
+					background: $buttonSelectHover;
+				}
+			}
+		}
+	}
+}
+
+

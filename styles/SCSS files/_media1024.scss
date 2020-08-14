@@ -1,0 +1,87 @@
+// 1024px - Tablet Large and below
+@media (max-width: 1024px) 
+{
+	// Header
+	header {
+		min-height: 60rem;
+
+		p {
+			@include fontSize(22);
+		}
+	}
+
+	// Featured posts section
+	.featured {
+		.gallery {
+			&-item {
+				flex-basis: $galleryFull;
+			}
+		}
+	}
+
+	// Blog section
+	.blog {
+		.gallery {
+			flex-basis: 100%;
+
+			&-item {
+				&-1 {
+					width: $galleryFull;
+				}
+				&-2,
+				&-3 {
+					width: calc(#{$galleryHalf} - 4rem);
+				}
+			}
+		}
+	}
+
+	// Sidebar
+	.sidebar {
+		flex-basis: 100%;
+		justify-content: center;
+		margin-top: 2rem;
+
+		&-column {
+			width: calc(#{$galleryHalf} - 4rem);
+			align-items: center;
+			margin: 2rem;
+		}
+
+		.about-us {
+			width: calc(#{$galleryHalf} - 4rem);
+		}
+
+		.subscribe,
+		.recent-posts {
+			width: calc(100%);
+		}
+
+		.subscribe {
+			margin-top: 0;
+		}
+	}
+
+	// Footer
+	footer {
+		.subscribe-container {
+			margin-top: 3rem;
+			width: 100%;
+		}
+	}
+
+	.footer-main {
+		.wrapper {
+			flex-wrap: wrap;
+		}
+		.footer-text {
+			width: calc(80% - 2rem);
+			padding-right: 6rem;
+		}
+
+		nav {
+			min-width: 20%;
+			margin-right: 2rem;
+		}
+	}
+}

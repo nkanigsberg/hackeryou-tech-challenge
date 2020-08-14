@@ -1,0 +1,192 @@
+// 768px - Tablet and below
+@media (max-width: 768px) 
+{
+	// global
+	.wrapper {
+		width: 90%;
+	}
+
+	// reduce section padding
+	section,
+	.footer-main {
+		padding: 4rem 0;
+	}
+
+	// Header
+	header {
+		height: 60vh;
+		min-height: 45rem;
+
+		p {
+			font-size: calc(1.4rem + 0.5vw);
+		}
+	}
+
+	.hero {
+		padding: 2rem;
+
+		&-text {
+			padding: calc(2rem + 1vw);
+			max-width: 100%;
+		}
+	}
+
+	// main heading
+	h1 {
+		font-size: 2.2rem;
+	}
+
+	// subheading
+	h2 {
+		font-size: 1.6rem;
+	}
+
+	// Nav - hamburger menu
+	#hamburger,
+	label[for="hamburger"] {
+		display: inline-block;
+
+		i {
+			font-size: 2rem;
+			padding: 1.6rem;
+		}
+	}
+	
+	// nav styles
+	header nav {
+		ul {
+			color: $primaryBlack;
+			background: $secondaryBackground;
+			box-shadow: -1px 1px 10px #0008;
+			z-index: 20;
+			flex-direction: column;
+			position: fixed;
+			padding: 5rem 0.5rem 1.5rem;
+			right: 5px;
+			
+			// hide menu above screen and transition into place
+			height: 27rem;
+			top: -27rem;
+			opacity: 0;
+			transition: 0.5s;
+
+			a {
+				display: inline-block;
+				font-size: 1.8rem;
+				padding: 1rem 2rem;
+				width: 100%;
+			}
+		}
+	}
+
+	// toggle nav position when checked
+	#hamburger:checked ~ ul {
+		opacity: 1;
+		top: -5px;
+		right: 5px;
+	}
+
+	// reduce gallery margins
+	.gallery-item {
+		margin: 1rem;
+	}
+
+	// blog section
+	.blog {
+		padding-bottom: 0;
+		.gallery {
+			&-item {
+				&-text {
+					padding: 1rem;
+					p {
+						padding: 1rem;
+					}
+				}
+
+				// enlarge images 2 and 3
+				&-2,
+				&-3 {
+					width: 100%;
+				}
+			}
+
+			// gallery buttons
+			&-buttons {
+				font-size: 1.8rem;
+				button {
+					height: 3.5rem;
+					width: 3.5rem;
+					padding: 0.5rem;
+				}
+			}
+		}
+
+		// sidebar
+		.sidebar {
+			.about-us,
+			.sidebar-column {
+				width: 100%;
+			}
+
+			.subscribe {
+				width: 80%;
+			}
+		}
+	}
+
+	// footer
+	footer {
+		text-align: center;
+		
+		p {
+			text-align: center;
+		}
+	}
+
+	.footer-main {
+		// main footer text
+		.footer-text {
+			width: 100%;
+			padding-right: 0;
+		}
+
+		// nav menu
+		nav { 
+			margin-top: 1.5rem;
+			min-width: 100%;
+			ul {
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: space-around;
+				
+				a {
+					padding: 0;
+				}
+			}
+		}
+
+		// Subscribe form container
+		.subscribe-container {
+			margin-top: 4rem;
+			width: 100%;
+			align-items: center;
+		}
+
+		// change form to column
+		.subscribe {
+			flex-direction: column;
+			width: 80%;
+		}
+
+		// change input width & margins
+		input[type="email"],
+		input[type="submit"] {
+			width: 100%;
+			margin: 0;
+		}
+		input[type="email"] {
+			margin-bottom: 0.5rem;
+		}
+	}
+}

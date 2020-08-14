@@ -1,0 +1,34 @@
+// 414px - Mobile large and below
+@media (max-width: 414px) 
+{
+	// global
+	// slightly reduce line height
+	p {
+		line-height: 1.5;
+	}
+
+	// header
+	header {
+		.hero-text {
+			padding: 1.5rem;
+
+			p {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	// enlarge subscribe forms to full width
+	.blog .sidebar .subscribe,
+	footer .footer-main .subscribe {
+		width: 100%;
+	}
+
+	// prevent icons from overflowing
+	.social-icons {
+		width: 60%;
+		a {
+			padding: 0.5rem;
+		}
+	}
+}
